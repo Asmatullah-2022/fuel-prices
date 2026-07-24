@@ -1,0 +1,60 @@
+{
+  "effective": "2026-07-24",
+  "currency": "Rs.",
+  "updatedAt": "2026-07-24T00:01:00+05:00",
+  "sourceNote": "Source: Press release of the Ministry of Energy (Petroleum Division), Islamabad, dated 23 July 2026, revising ex-depot prices with effect from 24 July 2026 under the daily petroleum pricing mechanism.",
+  "products": {
+    "ms": {
+      "label": "Motor Spirit (Petrol)",
+      "short": "Petrol",
+      "history": [
+        {
+          "date": "2026-07-24",
+          "price": 331.52
+        },
+        {
+          "date": "2026-07-23",
+          "price": 327.12
+        },
+        {
+          "date": "2026-07-22",
+          "price": 320.73
+        },
+        {
+          "date": "2026-07-11",
+          "price": 310.71
+        },
+        {
+          "date": "2026-07-04",
+          "price": 297.53
+        },
+        {
+          "date": "2026-06-27",
+          "price": 299.5
+        }
+      ]
+    },
+    "hsd": {
+      "label": "High Speed Diesel (HSD)",
+      "short": "Diesel",
+      "history": [
+        {
+          "date": "2026-07-24",
+          "price": 378.66
+        },
+        {
+          "date": "2026-07-23",
+          "price": 375.04
+        },
+        {
+          "date": "2026-07-22",
+          "price": 367.21
+        },
+        {
+          "date": "2026-07-21",
+          "price": 360.06
+        }
+      ]
+    }
+  }
+}
