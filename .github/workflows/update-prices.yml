@@ -1,0 +1,53 @@
+name: Update fuel prices
+
+# Runs every night just after Pakistan midnight, when OGRA's daily
+# notification takes effect. Also runnable by hand from the Actions tab.
+on:
+  schedule:
+    - cron: "20 19 * * *"   # 19:20 UTC = 00:20 PKT
+    - cron: "30 4 * * *"    # 04:30 UTC = 09:30 PKT (second try, in case the
+                            # sources had not published at midnight)
+  workflow_dispatch:
+    inputs:
+      petrol:
+        description: "Petrol (MS) price — leave blank to read the websites"
+        required: false
+        default: ""
+      diesel:
+        description: "Diesel (HSD) price — leave blank to read the websites"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch the latest notified prices
+        env:
+          MANUAL_PETROL: ${{ github.event.inputs.petrol }}
+          MANUAL_DIESEL: ${{ github.event.inputs.diesel }}
+        run: python scripts/update_prices.py
+
+      - name: Commit if the prices changed
+        run: |
+          if git diff --quiet -- prices.json; then
+            echo "No change in prices.json — nothing to commit."
+            exit 0
+          fi
+          git config user.name  "fuel-price-bot"
+          git config user.email "actions@github.com"
+          git add prices.json
+          git commit -m "Update fuel prices ($(date -u '+%Y-%m-%d'))"
+          git push
