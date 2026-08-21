@@ -1,13 +1,17 @@
 {
-  "effective": "2026-08-21",
+  "effective": "2026-08-22",
   "currency": "Rs.",
-  "updatedAt": "2026-08-21T00:50:10+05:00",
-  "sourceNote": "Ex-depot prices notified by the Ministry of Energy (Petroleum Division) on the advice of OGRA under the daily petroleum pricing mechanism, effective 2026-08-21. Collected automatically from public sources; verify against the official notification for any formal use.",
+  "updatedAt": "2026-08-22T00:42:54+05:00",
+  "sourceNote": "Ex-depot prices notified by the Ministry of Energy (Petroleum Division) on the advice of OGRA under the daily petroleum pricing mechanism, effective 2026-08-22. Collected automatically from public sources; verify against the official notification for any formal use.",
   "products": {
     "ms": {
       "label": "Motor Spirit (Petrol)",
       "short": "Petrol",
       "history": [
+        {
+          "date": "2026-08-22",
+          "price": 341.59
+        },
         {
           "date": "2026-08-21",
           "price": 337.78
@@ -110,6 +114,10 @@
       "label": "High Speed Diesel (HSD)",
       "short": "Diesel",
       "history": [
+        {
+          "date": "2026-08-22",
+          "price": 368.29
+        },
         {
           "date": "2026-08-21",
           "price": 363.06
